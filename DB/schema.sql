@@ -28,3 +28,11 @@ calories int (100) not null,
 primary key (WID)
 
 );
+-- Stores login info from passport. I think we will be able to combine it with the the other user data, not sure yet.
+CREATE TABLE users
+(
+	id int NOT NULL AUTO_INCREMENT,
+	username varchar(255) NOT NULL,
+	password varchar(255) NOT NULL,
+	PRIMARY KEY (id)
+);

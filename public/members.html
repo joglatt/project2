@@ -11,18 +11,31 @@
 
 <body>
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/logout">
+          Logout
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+        <h2>Welcome
+          <span class="member-name"></span>
+        </h2>
+        <form class="workout">
+          <div class="form-group">
+            <label for="wtype">Workout Type</label>
+            <input type="wtype" class="form-control" id="wtype" placeholder="Workout Type">
+          </div>
+          <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="duration" class="form-control" id="Duration" placeholder="Duration">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
       </div>
     </div>
   </div>

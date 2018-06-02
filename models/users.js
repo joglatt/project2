@@ -14,44 +14,31 @@ var user = {
       cb(err, rows);
     });
   },
-  all: function(cb) {
-    orm.all("userInfo", function(res) {
-      cb(res);
-    });
-  },
   update: function(objColVals, condition, cb) {
     orm.update("userInfo", condition, function(res) {
       cb(res);
     });
   },
-  delete: function(condition, cb) {
-    orm.delete("userInfo", condition, function(res) {
-      cb(res);
-    });
-  }
-};
 
-var Workouts = {
-  //Select all User info from the Workouts Table
   all: function(cb) {
     orm.all("Workouts", function(res) {
       cb(res);
     });
   },
   //Create new users for the Workouts table
-  create: function(cb) {
-    orm.create("Workouts", cols, vals, function(res) {
+  createWorkout: function(cols, vals, cb) {  
+    orm.createWorkout("Workouts", cols, vals, function(res) {
       cb(res);
     });
   },
   //Updates the entries in the Workouts table
-  update: function(objColVals, condition, cb) {
+  updateWorkout: function(objColVals, condition, cb) {
     orm.update("Workouts", condition, function(res) {
       cb(res);
     });
   },
   //Deletes the entries in the Workouts tables
-  delete: function(condition, cb) {
+  deleteWorkout: function(condition, cb) {
     orm.delete("Workouts", condition, function(res) {
       cb(res);
     });
@@ -59,4 +46,3 @@ var Workouts = {
 };
 // Export the database functions for the controller (catsController.js).
 module.exports = user;
-// module.exports = workouts;

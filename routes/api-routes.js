@@ -61,13 +61,21 @@ module.exports = function(app) {
 
   //create new workout
 
-  app.get("/api/workout_data", function(req,res){
+  app.get("/api/workout_data", function(req, res) {
     res.json(req.body);
-  })
+  });
   app.post("/api/workout_data", function(req, res) {
     user.createWorkout(
-      ["UID", "type", "duration"],
-      [req.body.id, req.body.type, req.body.duration]
+      ["UID", "type", "duration", "calories"],
+      [req.body.id, req.body.type, req.body.duration, req.body.calories],
+      function(result){
+        if (result.changedRows == 0) {
+          // If no rows were changed, then the ID must not exist, so 404
+          return res.status(404).end();
+        } else {
+          res.status(200).end();
+        }
+      }
     );
   });
 };

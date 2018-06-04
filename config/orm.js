@@ -56,10 +56,12 @@ var orm = {
     });
   },
 
-  update: function(table, objColVals, condition, cb) {
+  update: function(table, cols, condition, cb) {
+    console.log(cols);
+    console.log(condition);
     var queryString = "UPDATE " + table;
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += Object.keys(cols) + "=" + `${Object.values(cols)}`;
     queryString += " WHERE ";
     queryString += condition;
     console.log(queryString);

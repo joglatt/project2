@@ -97,4 +97,29 @@ module.exports = function(app) {
       }
     );
   });
+
+  //----------------------------------
+  /**
+  GET /users
+  GET /user(s)/{id}
+  POST /users
+  PUT /user(s)/{id}
+
+  GET /users
+  GET /user/{id}/workouts
+*/
+//--------------------------------------
+  app.get("/users", function(req, res){
+    user.all("userInfo", function(result){
+      var data = result;
+      console.log(data)
+    });
+  });
+
+  app.get("/users/workouts", function(req, res){
+    user.all("Workouts", function(result){
+      var data = result;
+      console.log(data)
+    });
+  })
 };

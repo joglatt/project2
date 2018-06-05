@@ -14,8 +14,8 @@ var user = {
       cb(err, rows);
     });
   },
-  update: function(objColVals, condition, cb) {
-    orm.update("userInfo", condition, function(res) {
+  update: function(cols, condition, cb) {
+    orm.update("userInfo", cols, condition, function(res) {
       cb(res);
     });
   },
@@ -26,7 +26,7 @@ var user = {
     });
   },
   //Create new users for the Workouts table
-  createWorkout: function(cols, vals, cb) {  
+  createWorkout: function(cols, vals, cb) {
     orm.createWorkout("Workouts", cols, vals, function(res) {
       cb(res);
     });
@@ -44,5 +44,4 @@ var user = {
     });
   }
 };
-// Export the database functions for the controller (catsController.js).
 module.exports = user;

@@ -68,7 +68,7 @@ module.exports = function(app) {
     user.createWorkout(
       ["UID", "type", "duration", "calories"],
       [req.body.id, req.body.type, req.body.duration, req.body.calories],
-      function(result){
+      function(result) {
         if (result.changedRows == 0) {
           // If no rows were changed, then the ID must not exist, so 404
           return res.status(404).end();
@@ -78,4 +78,48 @@ module.exports = function(app) {
       }
     );
   });
+
+  //update weight
+  app.put("/api/user_data", function(req, res) {
+    console.log(req.body);
+    var condition = `id = ${req.body.id}`;
+    user.update(
+      {
+        weight: req.body.weight
+      },
+      condition,
+      function(result) {
+        if (result.changedRows == 0) {
+          return res.status(404).end();
+        } else {
+          res.status(200).end();
+        }
+      }
+    );
+  });
+
+  //----------------------------------
+  /**
+  GET /users
+  GET /user(s)/{id}
+  POST /users
+  PUT /user(s)/{id}
+
+  GET /users
+  GET /user/{id}/workouts
+*/
+//--------------------------------------
+  app.get("/users", function(req, res){
+    user.all("userInfo", function(result){
+      var data = result;
+      console.log(data)
+    });
+  });
+
+  app.get("/users/workouts", function(req, res){
+    user.all("Workouts", function(result){
+      var data = result;
+      console.log(data)
+    });
+  })
 };

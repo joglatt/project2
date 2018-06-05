@@ -7,8 +7,8 @@ $(document).ready(function() {
   });
 
   function getUserId(userId) {
-    var typeInput = $("input#wtype");
-    var durationInput = $("input#duration");
+    var typeInput = $("#wtype");
+    var durationInput = $("#duration");
     var calorieData = 40;
     $("form.workout").on("submit", function(event) {
       event.preventDefault();

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/memberstyle.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -33,8 +33,11 @@
         </h2>
         <form class="workout">
           <div class="form-group">
-            <label for="wtype">Workout Type</label>
-            <input type="wtype" class="form-control" id="wtype" placeholder="Workout Type">
+            <label for="wtype" type="wtype">Workout Type</label>
+            <select name="wtype" id="wtype" type="wtype">
+            <option type="wtype" value="cardio">Cardio</option>
+            <option type="wtype" value="resistance">Resistance</option>
+          </select>
           </div>
           <div class="form-group">
             <label for="duration">Duration</label>

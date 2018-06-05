@@ -20,7 +20,13 @@ var user = {
     });
   },
 
-  all: function(cb) {
+  allWorkouts: function(cb) {
+    orm.all("Workouts", function(res) {
+      cb(res);
+    });
+  },
+
+  allUsers: function(cb) {
     orm.all("Workouts", function(res) {
       cb(res);
     });

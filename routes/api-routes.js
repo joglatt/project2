@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var passport = require("../config/passport");
 var user = require("../models/users");
+var project2models = ("../models/project2models")
 
 module.exports = function(app) {
   function auth(req, res, next, authMethod) {
@@ -110,14 +111,14 @@ module.exports = function(app) {
 */
 //--------------------------------------
   app.get("/users", function(req, res){
-    user.all("userInfo", function(result){
+    user.allUsers(function(result){
       var data = result;
       console.log(data)
     });
   });
 
   app.get("/users/workouts", function(req, res){
-    user.all("Workouts", function(result){
+    user.allWorkouts(function(result){
       var data = result;
       console.log(data)
     });

@@ -62,9 +62,9 @@ module.exports = function(app) {
 
   //create new workout
 
-  app.get("/api/workout_data", function(req, res) {
-    res.json(req.body);
-  });
+  // app.get("/api/workout_data", function(req, res) {
+  //   res.json(req.body);
+  // });
   app.post("/api/workout_data", function(req, res) {
     user.createWorkout(
       ["UID", "type", "duration", "calories"],
@@ -122,5 +122,23 @@ module.exports = function(app) {
       var data = result;
       console.log(data)
     });
-  })
+  });
+
+  app.get("/users/", function(req, res){
+    user.allWorkouts(function(result){
+      var data = result;
+      console.log(data)
+    });
+  });
+
+  app.get("/api/workout_data", function(req, res){
+    console.log(req.body);
+    user.selectHistory("id", req.body.id, function(result){
+      console.log(result);
+
+    });
+  });
+  
 };
+
+

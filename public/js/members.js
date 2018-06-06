@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     getUserId(currentId);
     updateWeight(currentId);
+    table(currentId);
   });
 
   function getUserId(userId) {
@@ -44,6 +45,17 @@ $(document).ready(function() {
         location.reload();
       });
     });
+  }
+
+  function table(userId){
+    $.ajax("/api/workout_data", {
+      type: "GET",
+      data: userId
+    }).then(function() {
+      console.log(userId)
+    }
+      
+    )
   }
 });
 

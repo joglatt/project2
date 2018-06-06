@@ -100,6 +100,18 @@ var orm = {
     });
   },
 
+  displayWorkout: function(tableInput, colToSearch, valOfCol, cb) {
+    var queryString = "SELECT * FROM ?? WHERE ?? = ?";
+    connection.query(queryString, [tableInput, colToSearch, valOfCol], function(
+      err,
+      result
+    ) {
+      if (err) throw err;
+      cb(err, result);
+    });
+  },
+
+
   create: function(table, cols, cb) {
     var queryString = `INSERT INTO ${table} (${Object.keys(
       cols
@@ -111,6 +123,20 @@ var orm = {
       }
       cb(null, result);
     });
-  }
+  },
+
+  selectHistory: function(tableInput, colToSearch, valOfCol, cb) {
+    var queryString = "SELECT * FROM ? WHERE ? = ?";
+    console.log(queryString);
+    connection.query(queryString, [tableInput, colToSearch, valOfCol], function(
+      err,
+      result
+    ) {
+      if (err) throw err;
+      cb(err, result);
+    });
+  },
+
+
 };
 module.exports = orm;

@@ -48,6 +48,12 @@ var user = {
     orm.delete("Workouts", condition, function(res) {
       cb(res);
     });
-  }
+  },
+
+  selectHistory: function(col, vals, cb) {
+    orm.selectHistory("Workouts", col, vals, function(err, rows) {
+      cb(err, rows);
+    });
+  },
 };
 module.exports = user;

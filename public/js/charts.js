@@ -3,11 +3,12 @@ $(document).ready(function () {
     // I've got this chart reading as a workout duration chart but we can modify 
     // based on which charts we are going to build. 
     $(function () {
-        var $container = $('#chart1').appendTo('#workoutDurationChart');
+        var $container = $('#workoutDurationChart').appendTo('#workoutDurationChart');
 
         window.chart = new Highcharts.Chart({
             chart: {
                 renderTo: $container[0],
+                type: 'column',
                 height: 400
             },
 
@@ -37,7 +38,8 @@ $(document).ready(function () {
             series: [{
                 showInLegend: false,
                 // series.data is what we will need to fill with stats for the chart
-                data: []
+                // dummy numbers
+                data: [15, 45, 30, 60, 0, 90, 25]
             }]
         });
     });

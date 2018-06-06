@@ -8,11 +8,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/memberstyle.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script src="js/charts.js"></script>
 </head>
 
 <body>
@@ -27,17 +22,17 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome
-          <span class="member-name"></span>
-        </h2>
+      <h2>Welcome to the members page
+        <span class="member-name"></span>
+      </h2>
+      <div class="box1">
         <form class="workout">
           <div class="form-group">
             <label for="wtype" type="wtype">Workout Type</label>
             <select name="wtype" id="wtype" type="wtype">
-            <option type="wtype" value="cardio">Cardio</option>
-            <option type="wtype" value="resistance">Resistance</option>
-          </select>
+              <option type="wtype" value="cardio">Cardio</option>
+              <option type="wtype" value="resistance">Resistance</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="duration">Duration</label>
@@ -48,25 +43,34 @@
       </div>
 
 
-    <div id="workoutDurationChart">
-<!-- Guessing we can probably add a button that would initiate this chart -->
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <form class="update">
-          <div class="form-group">
-            <label for="weight">Update Your Weight</label>
-            <input type="weight" class="form-control" id="weight" placeholder="Update Weight">
-          </div>
-          <button type="submit" id="update" class="btn btn-default">Update</button>
-        </form>
+
+      <!-- Guessing we can probably add a button that would initiate this chart -->
+      <div class="row">
+        <div class="box2">
+          <form class="update">
+            <div class="form-group">
+              <label for="weight">Update Your Weight</label>
+              <input type="weight" class="form-control" id="weight" placeholder="Update Weight">
+            </div>
+            <button type="submit" id="update" class="btn btn-default">Update</button>
+          </form>
+
+        </div>
 
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="chart1" id="workoutDurationChart">
+      </div>
 
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/members.js"></script>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/modules/exporting.js"></script>
+      <script src="https://code.highcharts.com/modules/export-data.js"></script>
+      <script type="text/javascript" src="js/charts.js"></script>
 
 </body>
 

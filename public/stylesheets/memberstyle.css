@@ -1,0 +1,85 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+body {
+  background:url('../assets/images/runner.jpg') 
+  no-repeat center;
+}
+
+.box1 {
+    float: left;
+    padding: 15px;
+    margin-left: 5%;
+}
+
+.box2 {
+    float: right;
+    padding: 15px;
+    padding-right: 30px;
+    margin-right: 5%;
+}
+
+.chart1 {
+    display: inline-block;
+    width: 93%;
+    padding-left: 75px;
+    text-align: center;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  color: rgb(69, 127, 204);
+  display: block;
+  text-transform: uppercase;
+  font-size: 33px;
+}
+
+.btn {
+  background: rgb(100, 165, 249);
+  padding: .5e 2em;
+  color: aliceblue;
+  border-color: rgb(100, 165, 249);
+}
+
+.btn:hover {
+  background: rgb(69, 127, 204);
+  border-color: rgb(69, 127, 204);
+  color: black;
+  cursor: pointer;
+}
+
+label {
+  color: rgb(69, 127, 204);;
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  margin-left: 5%;
+}
+
+p {
+  text-align: center;
+  color: aliceblue;
+  margin-bottom: 7%;
+}
+
+a {
+  font-size: 18px;
+  color: rgb(100, 165, 249);
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(100, 165, 249);
+  text-transform: uppercase;
+}
+
+.form-control {
+  color: black;
+}
+
+.form-control:focus {
+  background-color: rgb(198, 220, 250);
+}

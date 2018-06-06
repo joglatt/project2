@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var passport = require("../config/passport");
 var user = require("../models/users");
-var project2models = ("../models/project2models")
+var project2models = "../models/project2models";
 
 module.exports = function(app) {
   function auth(req, res, next, authMethod) {
@@ -109,37 +109,33 @@ module.exports = function(app) {
   GET /users
   GET /user/{id}/workouts
 */
-//--------------------------------------
-  app.get("/users", function(req, res){
-    user.allUsers(function(result){
+  //--------------------------------------
+  app.get("/users", function(req, res) {
+    user.allUsers(function(result) {
       var data = result;
-      console.log(data)
+      console.log(data);
     });
   });
 
-  app.get("/users/workouts", function(req, res){
-    user.allWorkouts(function(result){
+  app.get("/users/workouts", function(req, res) {
+    user.allWorkouts(function(result) {
       var data = result;
-      console.log(data)
+      console.log(data);
     });
   });
 
-  app.get("/users/", function(req, res){
-    user.allWorkouts(function(result){
+  app.get("/users/", function(req, res) {
+    user.allWorkouts(function(result) {
       var data = result;
-      console.log(data)
+      console.log(data);
     });
   });
 
-  app.get("/api/workout_data", function(req, res){
-    console.log(user);
-    res.json({});
-    user.selectHistory("id", user.UID, function(result){
+  app.get("/api/workout_data", function(req, res) {
+    // console.log(req.user.id);
+    user.selectHistory("uid", req.user.id, function(err, result) {
+      // res.json(result);
       console.log(result);
-
     });
   });
-  
 };
-
-

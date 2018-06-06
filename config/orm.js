@@ -126,7 +126,7 @@ var orm = {
   },
 
   selectHistory: function(tableInput, colToSearch, valOfCol, cb) {
-    var queryString = "SELECT * FROM ? WHERE ? = ?";
+    var queryString = `SELECT * FROM ${tableInput} WHERE ${colToSearch} = ${valOfCol};`
     console.log(queryString);
     connection.query(queryString, [tableInput, colToSearch, valOfCol], function(
       err,

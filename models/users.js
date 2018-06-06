@@ -9,7 +9,7 @@ var user = {
   // The variables cols and vals are arrays.
   create: function(cols, cb) {
     orm.create("userInfo", cols, function(err, rows) {
-      console.log("rows ");
+      console.log("rows");
       console.log(rows);
       cb(err, rows);
     });
@@ -51,8 +51,8 @@ var user = {
   },
 
   selectHistory: function(col, vals, cb) {
-    orm.selectHistory("Workouts", col, vals, function(err, rows) {
-      cb(err, rows);
+    orm.selectHistory("Workouts", col, vals, function(res) {
+      cb(err, res);
     });
   },
 };

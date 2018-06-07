@@ -4,15 +4,14 @@ function handleLoginSignup(form, url) {
 
   // When the form is submitted, we validatew there's an email and password entered
   form.on("submit", function(event) {
+    event.preventDefault();
     var passwordInput = $("input#password-input");
     var emailInput = $("input#email-input");
-    var sexInput = $("input##sex");
+    var sexInput = $("#sex");
     var weightInput = $("input#weight-input");
     var ft = $("#ft").val();
     var inches = $("#in").val();
     var heightInput = parseInt(ft) * 12 + parseInt(inches);
-
-    event.preventDefault();
     $(".container").hide();
     var userData = {
       email: emailInput.val().trim(),

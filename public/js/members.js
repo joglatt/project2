@@ -66,7 +66,6 @@ $(document).ready(function() {
           var tableContent = "<tr><td>" + workoutID + "</td><br><td>" + workoutUserId + "</td><td>" + workoutType + "</td><td>" + workoutDuration + "</td><td>" + workoutCalories + "</td></tr>";
         };
         $("#workoutTable").html("<tr><th>Workout ID</th><br><th>User ID</th><br><th>Type</th><br><th>Duration</th><br><th>Calories</th><tr>" + tableContent);
-        $("workoutTable").append(tableContent);
     
     });
   }

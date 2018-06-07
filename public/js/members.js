@@ -50,12 +50,18 @@ $(document).ready(function() {
   function table(userId){
     $.ajax("/api/workout_data", {
       type: "GET",
-      data: userId
-    }).then(function() {
-      console.log(userId)
+      data: userId,
+      success: function (data) {
+          console.log(data);   
+      },
+    }).then(function(data) {
+      // console.log(data)
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i].WID + " | " + data[i].UID + " | " + data[i].type + " | " + data[i].duration + " | " + data[i].calories);
     }
+    })
       
-    )
+    
   }
 });
 

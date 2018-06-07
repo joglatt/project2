@@ -52,7 +52,7 @@ var user = {
 
   selectHistory: function(col, vals, cb) {
     orm.selectHistory("Workouts", col, vals, function(res) {
-      cb(err, res);
+      cb(res);
     });
   },
 };

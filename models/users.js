@@ -51,8 +51,10 @@ var user = {
   },
 
   selectHistory: function(col, vals, cb) {
-    orm.selectHistory("Workouts", col, vals, function(res) {
-      cb(res);
+
+    orm.selectHistory("Workouts", col, vals, function(err, res) {
+      cb(err, res);
+
     });
   },
 };

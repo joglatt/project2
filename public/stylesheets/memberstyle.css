@@ -83,3 +83,7 @@ a:hover {
 .form-control:focus {
   background-color: rgb(198, 220, 250);
 }
+
+#table{
+  text-align: center;
+}

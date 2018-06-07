@@ -55,6 +55,7 @@ $(document).ready(function() {
           // console.log(data);   
       },
     }).then(function(data) {
+      var tableContent = "";
       for (var i = 0; i < data.length; i++) {
         // console.log(data[i].WID + " | " + data[i].UID + " | " + data[i].type + " | " + data[i].duration + " | " + data[i].calories);
           var workoutID = data[i].WID;
@@ -63,10 +64,10 @@ $(document).ready(function() {
           var workoutDuration = data[i].duration;
           var workoutCalories = data[i].calories;
           console.log(workoutID, workoutUserId, workoutType, workoutDuration, workoutCalories)
-          var tableContent = "<tr><td>" + workoutID + "</td><br><td>" + workoutUserId + "</td><td>" + workoutType + "</td><td>" + workoutDuration + "</td><td>" + workoutCalories + "</td></tr>";
+          tableContent += "<tr><td>" + workoutID + "</td><br><td>" + workoutUserId + "</td><td>" + workoutType + "</td><td>" + workoutDuration + "</td><td>" + workoutCalories + "</td></tr>";
+        
         };
         $("#workoutTable").html("<tr><th>Workout ID</th><br><th>User ID</th><br><th>Type</th><br><th>Duration</th><br><th>Calories</th><tr>" + tableContent);
-        $("workoutTable").append(tableContent);
     
     });
   }

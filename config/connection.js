@@ -10,8 +10,8 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "calyps0", 
-    database: "WorkoutDB"
+    password: "1337", 
+    database: "rutgers"
   });
 }
 

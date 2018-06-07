@@ -6,7 +6,7 @@ function handleLoginSignup(form, url) {
   form.on("submit", function(event) {
     var passwordInput = $("input#password-input");
     var emailInput = $("input#email-input");
-    var sexInput = $("input##sex");
+    var sexInput = $("#sex");
     var weightInput = $("input#weight-input");
     var ft = $("#ft").val();
     var inches = $("#in").val();

@@ -133,9 +133,12 @@ module.exports = function(app) {
 
   app.get("/api/workout_data", function(req, res) {
     // console.log(req.user.id);
+
+
     user.selectHistory("uid", req.user.id, function(err, result) {
       res.json(result);
       // console.log(result);
+
     });
   });
 };

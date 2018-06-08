@@ -4,10 +4,9 @@ form.login {
 }
 
 body {
-
   height: 100%;
   background:url('../assets/images/runner.jpg') 
-  no-repeat center;
+  no-repeat center center fixed;
   background-size: 100%;
   
 }
@@ -26,9 +25,19 @@ body {
     /* margin-right: 5%; */
 }
 
-#workoutTable {
+
+/* #workoutTable {
   text-align: center;
-   
+  
+} */
+
+th {
+  font-size: 20px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
 }
 
 .chart1 {
@@ -96,4 +105,8 @@ a:hover {
 
 #table{
   text-align: center;
+}
+
+#workoutsList {
+  background-color:  #ffffff;
 }

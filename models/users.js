@@ -21,38 +21,38 @@ var user = {
   },
 
   allWorkouts: function(cb) {
-    orm.all("Workouts", function(res) {
+    orm.all("workouts", function(res) {
       cb(res);
     });
   },
 
   allUsers: function(cb) {
-    orm.all("Workouts", function(res) {
+    orm.all("workouts", function(res) {
       cb(res);
     });
   },
   //Create new users for the Workouts table
   createWorkout: function(cols, vals, cb) {
-    orm.createWorkout("Workouts", cols, vals, function(res) {
+    orm.createWorkout("workouts", cols, vals, function(res) {
       cb(res);
     });
   },
   //Updates the entries in the Workouts table
   updateWorkout: function(objColVals, condition, cb) {
-    orm.update("Workouts", condition, function(res) {
+    orm.update("workouts", condition, function(res) {
       cb(res);
     });
   },
   //Deletes the entries in the Workouts tables
   deleteWorkout: function(condition, cb) {
-    orm.delete("Workouts", condition, function(res) {
+    orm.delete("workouts", condition, function(res) {
       cb(res);
     });
   },
 
   selectHistory: function(col, vals, cb) {
 
-    orm.selectHistory("Workouts", col, vals, function(err, res) {
+    orm.selectHistory("workouts", col, vals, function(err, res) {
       cb(err, res);
 
     });

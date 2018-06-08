@@ -18,6 +18,27 @@ h2 {
   font-size: 33px;
 }
 
+h3 {
+  width: 100%;
+  text-align: left;
+  font-family: 'Anton', sans-serif;
+  color: aliceblue;
+  display: block;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+h4 {
+  width: 60%;
+  text-align: right;
+  font-family: 'Anton', sans-serif;
+  color: aliceblue;
+  display: block;
+  /* text-transform: uppercase; */
+  font-size: 18px;
+}
+
+
 .btn {
   background: rgb(100, 165, 249);
   padding: .5e 2em;
@@ -62,4 +83,12 @@ a:hover {
 
 .form-control:focus {
   background-color: rgb(198, 220, 250);
+}
+
+.column {
+  float: left;
+}
+
+.left, .middle, .right {
+  width: 33.3%;
 }

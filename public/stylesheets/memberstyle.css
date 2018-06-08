@@ -3,6 +3,16 @@ form.login {
   margin-top: 50px;
 }
 
+.highcharts-background {
+  fill: #e6f0f7;
+}
+
+.highcharts-color-0 {
+	fill: rgb(69, 127, 204);
+  /* stroke: #ec7ce6; */
+  stroke: yellow;
+}
+
 body {
   height: 100%;
   background:url('../assets/images/runner.jpg') 

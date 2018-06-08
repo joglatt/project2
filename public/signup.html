@@ -31,6 +31,7 @@
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="email-input" placeholder="Email">
           </div>
+          <br>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
@@ -39,30 +40,39 @@
             <label for="exampleInputSex">Sex</label>
             <input type="sex" class="form-control" id="sex-input" placeholder="Sex">
           </div> -->
-          <div class="form-group">
-            <label for="sex" type="sex" >Sex</label>
-            <select name="sex" id="sex" type="sex">
-              <option type="sex" value="Male">Male</option>
-              <option type="sex" value="Female">Female</option>
-            </select>
-          </div>
-          <!-- <div class="form-group">
+          <h3>Enter your stats:</h3>
+          <h4>Height</h4>
+
+          <row>
+            <div class="form-group">
+              <div class="column left">
+                <label for="sex" type="sex">Sex</label>
+                <select name="sex" id="sex" type="sex">
+                  <option type="sex" value="Male">Male</option>
+                  <option type="sex" value="Female">Female</option>
+                </select>
+              </div>
+            </div>
+            <!-- <div class="form-group">
             <label for="exampleInputHeight">Height</label>
             <input type="height" class="form-control" id="height-input" placeholder="Height">
           </div>
          -->
-          <div class="form-group">
-            <label for="ft" type="ft">Feet</label>
-            <select name="ft" id="ft" type="ft">
-              <option type="ft" value="3">3</option>
-              <option type="ft" value="4">4</option>
-              <option type="ft" value="5">5</option>
-              <option type="ft" value="6">6</option>
-              <option type="ft" value="7">7</option>
-            </select>
+            <div class="form-group">
+              <div class="column middle">
+                <label for="ft" type="ft">Feet</label>
+                <select name="ft" id="ft" type="ft">
+                  <option type="ft" value="3">3</option>
+                  <option type="ft" value="4">4</option>
+                  <option type="ft" value="5">5</option>
+                  <option type="ft" value="6">6</option>
+                  <option type="ft" value="7">7</option>
+                </select>
+              </div>
+            </div>
 
             <div class="form-group">
-              <div class="form-group">
+              <div class="column right">
                 <label for="in" type="in">Inches</label>
                 <select name="in" id="in" type="in">
                   <option type="in" value="0">0</option>
@@ -78,24 +88,33 @@
                   <option type="in" value="10">10</option>
                   <option type="in" value="11">11</option>
                 </select>
-                <div class="form-group">
+              </div>
+            </div>
+          </row>
+          <div>
+            <br>
+            <br>
+            <br>
+          </div>
+          <div class="form-group">
 
-                  <label for="exampleInputWeight">Weight</label>
-                  <input type="weight" class="form-control" id="weight-input" placeholder="Weight">
-                </div>
-                <button type="submit" class="btn btn-default">Sign Up</button>
+            <label for="exampleInputWeight">Weight</label>
+            <input type="weight" class="form-control" id="weight-input" placeholder="Weight">
+          </div>
+          <br>
+          <button type="submit" class="btn btn-default">Sign Up</button>
         </form>
-        <br />
+        <br>
         <p>Or log in
           <a href="/login">here</a>
         </p>
-        </div>
-        </div>
-        </div>
+      </div>
+    </div>
+  </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/util.js"></script>
-        <script type="text/javascript" src="js/signup.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/util.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
 
 </body>
 

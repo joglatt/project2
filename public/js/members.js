@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  $.get("/api/user_data").then(function (data) {
+$(document).ready(function() {
+  $.get("/api/user_data").then(function(data) {
     var currentId = data.id;
 
     getUserId(currentId);
@@ -10,8 +10,15 @@ $(document).ready(function () {
   function getUserId(userId) {
     var typeInput = $("#wtype");
     var durationInput = $("#duration");
-    var calorieData = 40;
-    $("form.workout").on("submit", function (event) {
+
+    // var calorieData;
+    $("form.workout").on("submit", function(event) {
+      var calorieData;
+      if (typeInput.val() === "cardio") {
+        calorieData = durationInput.val() * 1;
+      } else {
+        calorieData = durationInput.val() * 0.5;
+      }
       event.preventDefault();
       var workout = {
         id: userId,
@@ -19,7 +26,7 @@ $(document).ready(function () {
         duration: durationInput.val(),
         calories: calorieData
       };
-      $.post("/api/workout_data", workout, function (data) {
+      $.post("/api/workout_data", workout, function(data) {
         if (data) {
           alert("Workout recorded");
         }
@@ -29,7 +36,7 @@ $(document).ready(function () {
 
   function updateWeight(userId) {
     var weightInput = $("input#weight");
-    $("form.update").on("submit", function (event) {
+    $("form.update").on("submit", function(event) {
       event.preventDefault();
       var newWeight = {
         id: userId,
@@ -38,8 +45,7 @@ $(document).ready(function () {
       $.ajax("/api/user_data/", {
         type: "PUT",
         data: newWeight
-
-      }).then(function () {
+      }).then(function() {
         console.log("changed weight to", newWeight.weight);
         // Reload the page to get the updated list
         location.reload();
@@ -51,54 +57,68 @@ $(document).ready(function () {
     $.ajax("/api/workout_data", {
       type: "GET",
       data: userId,
-      success: function (data) {
-        // console.log(data);   
-      },
-    }).then(function (data) {
+      success: function(data) {
+        // console.log(data);
+      }
+    }).then(function(data) {
       var tableContent = "";
       var categories = [];
       var calories = [];
       for (var i = data.length - 7; i < data.length; i++) {
         // console.log(data[i].WID + " | " + data[i].UID + " | " + data[i].type + " | " + data[i].duration + " | " + data[i].calories);
-        categories.push(data[i].type)
-        calories.push(data[i].calories)
+        categories.push(data[i].type);
+        calories.push(data[i].calories);
         var workoutID = data[i].WID;
         var workoutUserId = data[i].UID;
         var workoutType = data[i].type;
         var workoutDuration = data[i].duration;
         var workoutCalories = data[i].calories;
         // console.log(workoutID, workoutUserId, workoutType, workoutDuration, workoutCalories);
-        tableContent += "<tr><td>" + workoutID + "</td><br><td>" + workoutUserId + "</td><td>" + workoutType + "</td><td>" + workoutDuration + "</td><td>" + workoutCalories + "</td></tr>";
-
-      };
-      $("#workoutTable").html("<tr><th>Workout ID</th><br><th>User ID</th><br><th>Type</th><br><th>Duration</th><br><th>Calories</th><tr>" + tableContent);
-
+        tableContent +=
+          "<tr><td>" +
+          workoutID +
+          "</td><br><td>" +
+          workoutUserId +
+          "</td><td>" +
+          workoutType +
+          "</td><td>" +
+          workoutDuration +
+          "</td><td>" +
+          workoutCalories +
+          "</td></tr>";
+      }
+      $("#workoutTable").html(
+        "<tr><th>Workout ID</th><br><th>User ID</th><br><th>Type</th><br><th>Duration</th><br><th>Calories</th><tr>" +
+          tableContent
+      );
 
       console.log(data);
-      var $container = $('#workoutDurationChart').appendTo('#workoutDurationChart');
+      var $container = $("#workoutDurationChart").appendTo(
+        "#workoutDurationChart"
+      );
 
       window.chart = new Highcharts.Chart({
         chart: {
           renderTo: $container[0],
-          type: 'column',
+          type: "column",
           height: 400
         },
 
         xAxis: {
           categories: categories,
           title: {
-            text: ''
+            text: ""
           }
         },
 
         yAxis: {
           title: {
-            text: 'Calories'
+            text: "Calories"
           }
         },
 
         title: {
-          text: 'Workout History'
+          text: "Workout History"
         },
 
         plotOptions: {
@@ -107,12 +127,14 @@ $(document).ready(function () {
           }
         },
 
-        series: [{
-          showInLegend: false,
-          // series.data is what we will need to fill with stats for the chart
-          // dummy numbers
-          data: calories
-        }]
+        series: [
+          {
+            showInLegend: false,
+            // series.data is what we will need to fill with stats for the chart
+            // dummy numbers
+            data: calories
+          }
+        ]
       });
     });
   }

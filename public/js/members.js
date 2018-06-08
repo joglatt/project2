@@ -74,28 +74,21 @@ $(document).ready(function() {
         var workoutDuration = data[i].duration;
         var workoutCalories = data[i].calories;
         // console.log(workoutID, workoutUserId, workoutType, workoutDuration, workoutCalories);
-        tableContent +=
-          "<tr><td>" +
-          workoutID +
-          "</td><br><td>" +
-          workoutUserId +
-          "</td><td>" +
-          workoutType +
-          "</td><td>" +
-          workoutDuration +
-          "</td><td>" +
-          workoutCalories +
-          "</td></tr>";
-      }
-      $("#workoutTable").html(
-        "<tr><th>Workout ID</th><br><th>User ID</th><br><th>Type</th><br><th>Duration</th><br><th>Calories</th><tr>" +
-          tableContent
-      );
+        tableContent += "<tr><td>" + workoutID + "</td><br><td>" + workoutUserId + "</td><td>" + workoutType + "</td><td>" + workoutDuration + "</td><td>" + workoutCalories + "</td></tr>";
+
+      };
+      $("#workoutTable").html("<tr><th>Workout ID</th><br><th>User ID</th><br><th>Type</th><br><th>Duration</th><br><th>Calories</th><tr>" + tableContent);
+      $("#workoutTable").css({"text-align": "center"});
+      $("th").css({"border": "2px solid lightskyblue", "text-align": "center", "font-size": "30px", "color": "ghostwhite" });
+      $("td").css({"border": "2px solid lightskyblue", "font-size": "15px", "color": "ghostwhite"})
+
+
 
       console.log(data);
       var $container = $("#workoutDurationChart").appendTo(
         "#workoutDurationChart"
       );
+
 
       window.chart = new Highcharts.Chart({
         chart: {

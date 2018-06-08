@@ -4,21 +4,31 @@ form.login {
 }
 
 body {
+
+  height: 100%;
   background:url('../assets/images/runner.jpg') 
   no-repeat center;
+  background-size: 100%;
+  
 }
 
-.box1 {
+#box1 {
     float: left;
     padding: 15px;
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 
-.box2 {
+#box2 {
     float: right;
     padding: 15px;
     padding-right: 30px;
-    margin-right: 5%;
+    padding-bottom: 55px;
+    /* margin-right: 5%; */
+}
+
+#workoutTable {
+  text-align: center;
+   
 }
 
 .chart1 {
